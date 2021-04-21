@@ -1,10 +1,8 @@
 <html>
 <body>
+
 <h2>
-    <a href="hello">Hello</a>
-</h2>
-<h2>
-    <a href="person/1">Person</a>
+    <a href="blog">Blog</a>
 </h2>
 </body>
 </html>
