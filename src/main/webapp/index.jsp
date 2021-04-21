@@ -2,7 +2,7 @@
 <body>
 
 <h2>
-    <a href="blog">Blog</a>
+    <jsp:forward page="/blog"></jsp:forward>
 </h2>
 </body>
 </html>

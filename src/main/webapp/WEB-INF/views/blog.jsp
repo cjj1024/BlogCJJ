@@ -10,8 +10,11 @@
 <html>
 <head>
     <title>Blog</title>
-    <script src="${pageContext.request.contextPath}/static/js/marked.min.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <script src="${pageContext.request.contextPath}/static/js/jquery-3.5.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/marked.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/popper.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(function () {
             $("#show-markdown").click(function () {
@@ -22,33 +25,25 @@
                     data:{},
                     success:function(data){
                         $("#markdown-text").html(data)
-                        $("#blog-content").html(marked(data))
+                        $("#blog-content p").html(marked(data))
                     }
                 });
-
-                // const xmlHttpRequest = new XMLHttpRequest()
-                // xmlHttpRequest.onreadystatechange = function () {
-                //     if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) {
-                //         $("#blog-content").html(marked(xmlHttpRequest.responseXML))
-                //         $("#markdown-text").html(xmlHttpRequest.responseXML)
-                //     }
-                // }
-                //
-                // xmlHttpRequest.open("GET", "markdown/ssm", true)
-                // xmlHttpRequest.send()
             })
         })
 
     </script>
 </head>
 <body>
-    <button id="show-markdown">Show Markdown</button>
-    <div id="blog-content">
+<center>
+    <button id="show-markdown" type="button" class="btn btn-primary">Show Markdown</button>
+</center>
+<div id="blog-content" class="jumbotron">
+    <h1></h1>
+    <p></p>
+</div>
 
-    </div>
+<div id="markdown-text">
 
-    <div id="markdown-text">
-
-    </div>
+</div>
 </body>
 </html>
