@@ -13,7 +13,7 @@ import java.io.*;
 public class BlogService {
     public InputStream getBlogText(String name) throws FileNotFoundException {
         BufferedInputStream bufferedInputStream = new BufferedInputStream(
-                new FileInputStream("C:\\Users\\CJJ\\Desktop\\笔记\\数据库.md"));
+                new FileInputStream("C:\\Users\\CJJ\\Desktop\\笔记\\ssm.md"));
 
         return bufferedInputStream;
     }

@@ -11,15 +11,16 @@
 <head>
     <title>Blog</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/highlight.js-10.7.2/src/styles/default.css">--%>
     <script src="${pageContext.request.contextPath}/static/js/jquery-3.5.1.min.js"></script>
 <%--    <script src="${pageContext.request.contextPath}/static/js/marked.min.js"></script>--%>
     <script src="${pageContext.request.contextPath}/static/markdown-it-12.0.6/dist/markdown-it.min.js"></script>
+<%--    <script src="${pageContext.request.contextPath}/static/highlight.js-10.7.2/src/highlight.js"></script>--%>
     <script src="${pageContext.request.contextPath}/static/js/popper.min.js"></script>
     <script src="${pageContext.request.contextPath}/static/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-        defaults = {};
-        md = window.markdownit(defaults);
+        const md = window.markdownit();
 
         $(function () {
             $("#show-markdown").click(function () {
