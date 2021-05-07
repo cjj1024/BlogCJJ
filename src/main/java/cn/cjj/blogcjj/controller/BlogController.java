@@ -4,15 +4,12 @@ import cn.cjj.blogcjj.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 
 /**
  * @author CuiJunJie
@@ -22,16 +19,18 @@ import java.nio.charset.StandardCharsets;
 @Controller
 public class BlogController {
 
-    @RequestMapping("blog")
-    public String showBlog() {
-        return "blog";
-    }
-
     @Autowired
     private BlogService blogService;
 
+
+    @RequestMapping("blog")
+    public String toBlogPage() {
+        return "blog";
+    }
+
+
     @RequestMapping(value = "markdown/{name}", method = RequestMethod.GET)
-    public void sendMarkdown(@PathVariable String name, HttpServletResponse response) throws IOException {
+    public void showMarkdown(@PathVariable String name, HttpServletResponse response) {
         response.reset();
         response.setCharacterEncoding("UTF-8");
         response.setContentType("multipart/form-data");
